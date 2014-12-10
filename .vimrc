@@ -6,6 +6,10 @@ if has('vim_starting')
 	call neobundle#rc(expand('~/.vim/bundle/'))
 endif
 
+if !has('gui_running')
+	set t_Co=256
+endif
+
 NeoBundle 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc'
 NeoBundle 'VimClojure'
@@ -66,7 +70,7 @@ set smartcase
 set incsearch
 set cursorline
 set noundofile
-"set laststatus=2
+set laststatus=2
 autocmd VimEnter,Colorscheme * :hi Cursorline cterm=underline ctermbg=234
 
 set list
