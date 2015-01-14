@@ -23,6 +23,7 @@ NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'majutsushi/tagbar'
+NeoBundle 'rking/ag.vim'
 
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'tpope/vim-surround.git'
