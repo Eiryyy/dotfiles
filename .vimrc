@@ -171,7 +171,7 @@ let g:lightline={
 			\ 'colorscheme': 'wombat'
 			\ }
 
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 augroup vimrc-local
   autocmd!
