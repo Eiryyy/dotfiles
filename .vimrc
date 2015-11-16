@@ -5,46 +5,46 @@ if has('vim_starting')
 	set runtimepath+=~/.vim/bundle/neobundle.vim
 	call neobundle#begin(expand('~/.vim/bundle/'))
 	NeoBundleFetch 'Shougo/neobundle.vim'
+	NeoBundle 'Shougo/neobundle.vim'
+	NeoBundle 'Shougo/vimproc'
+	NeoBundle 'VimClojure'
+	NeoBundle 'Shougo/vimshell'
+	NeoBundle 'Shougo/unite.vim'
+	NeoBundle 'Shougo/neocomplete.vim'
+	NeoBundle 'Shougo/neosnippet'
+	NeoBundle 'Shougo/neosnippet-snippets'
+	NeoBundle 'jpalardy/vim-slime'
+	NeoBundle 'scrooloose/syntastic'
+	NeoBundle 'majutsushi/tagbar'
+	NeoBundle 'rking/ag.vim'
+
+	NeoBundle 'mattn/emmet-vim'
+	NeoBundle 'tpope/vim-surround.git'
+	NeoBundle 'open-browser.vim'
+	NeoBundle 'mattn/webapi-vim'
+	NeoBundle 'hail2u/vim-css3-syntax'
+	NeoBundle 'osyo-manga/vim-over'
+	NeoBundle 'digitaltoad/vim-jade'
+	NeoBundle 'mustache/vim-mustache-handlebars'
+	NeoBundle 'groenewege/vim-less'
+	NeoBundle 'heavenshell/vim-jsdoc'
+	NeoBundle 'pangloss/vim-javascript'
+	NeoBundle 'mxw/vim-jsx'
+	NeoBundle 'stephpy/vim-yaml'
+	NeoBundle 'keith/swift.vim'
+
+	NeoBundle 'itchyny/lightline.vim'
+
+	NeoBundle 'yuroyoro/yuroyoro256.vim'
+
+	NeoBundle 'myhere/vim-nodejs-complete'
+
 	call neobundle#end()
 endif
 
 if !has('gui_running')
 	set t_Co=256
 endif
-
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'VimClojure'
-NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/neosnippet'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'jpalardy/vim-slime'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'rking/ag.vim'
-
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'tpope/vim-surround.git'
-NeoBundle 'open-browser.vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'osyo-manga/vim-over'
-NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'mustache/vim-mustache-handlebars'
-NeoBundle 'groenewege/vim-less'
-NeoBundle 'heavenshell/vim-jsdoc'
-NeoBundle 'pangloss/vim-javascript'
-NeoBundle 'mxw/vim-jsx'
-NeoBundle 'stephpy/vim-yaml'
-NeoBundle 'keith/swift.vim'
-
-NeoBundle 'itchyny/lightline.vim'
-
-NeoBundle 'yuroyoro/yuroyoro256.vim'
-
-NeoBundle 'myhere/vim-nodejs-complete'
 
 filetype plugin indent on
 filetype indent on
