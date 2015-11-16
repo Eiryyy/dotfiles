@@ -38,6 +38,7 @@ NeoBundle 'heavenshell/vim-jsdoc'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'mxw/vim-jsx'
 NeoBundle 'stephpy/vim-yaml'
+NeoBundle 'keith/swift.vim'
 
 NeoBundle 'itchyny/lightline.vim'
 
