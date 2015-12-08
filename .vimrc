@@ -168,9 +168,22 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 	let g:neocomplete#sources#omni#input_patterns = {}
 endif
 "let g:neocomplete#sources#omni#input_patterns.javascript = ['nodejscomplete#CompleteJS', 'javascriptcomplete#CompleteJS']
-let g:lightline={
-			\ 'colorscheme': 'wombat'
-			\ }
+let g:lightline = {
+	\ 'colorscheme': 'wombat',
+	\ 'component_function': {
+	\     'readonly': 'LightLineReadonly'
+	\ }
+	\ }
+
+function! LightLineReadonly()
+	if &filetype == "help"
+		return ""
+	elseif &readonly
+		return "⭤"
+	else
+		return ""
+	endif
+endfunction
 
 let g:syntastic_javascript_checkers = ['eslint']
 
