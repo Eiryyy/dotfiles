@@ -32,6 +32,7 @@ if has('vim_starting')
 	NeoBundle 'mxw/vim-jsx'
 	NeoBundle 'stephpy/vim-yaml'
 	NeoBundle 'keith/swift.vim'
+	NeoBundle 'tpope/vim-fugitive'
 
 	NeoBundle 'itchyny/lightline.vim'
 
@@ -169,9 +170,13 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
 endif
 "let g:neocomplete#sources#omni#input_patterns.javascript = ['nodejscomplete#CompleteJS', 'javascriptcomplete#CompleteJS']
 let g:lightline = {
+	\ 'active': {
+	\     'left': [ ['mode' ], [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+	\ },
 	\ 'colorscheme': 'wombat',
 	\ 'component_function': {
-	\     'readonly': 'LightLineReadonly'
+	\     'readonly': 'LightLineReadonly',
+	\     'fugitive': 'LightLineFugitive'
 	\ }
 	\ }
 
@@ -183,6 +188,14 @@ function! LightLineReadonly()
 	else
 		return ""
 	endif
+endfunction
+
+function! LightLineFugitive()
+	if exists("*fugitive#head")
+		let _ = fugitive#head()
+		return strlen(_) ? '⭠ '._ : ''
+	endif
+	return ''
 endfunction
 
 let g:syntastic_javascript_checkers = ['eslint']
