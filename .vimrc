@@ -28,7 +28,7 @@ if has('vim_starting')
 	NeoBundle 'mustache/vim-mustache-handlebars'
 	NeoBundle 'groenewege/vim-less'
 	NeoBundle 'heavenshell/vim-jsdoc'
-	NeoBundle 'pangloss/vim-javascript'
+	NeoBundle 'othree/yajs.vim'
 	NeoBundle 'mxw/vim-jsx'
 	NeoBundle 'stephpy/vim-yaml'
 	NeoBundle 'keith/swift.vim'
