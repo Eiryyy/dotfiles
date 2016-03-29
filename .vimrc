@@ -37,6 +37,7 @@ if has('vim_starting')
 	NeoBundle 'itchyny/lightline.vim'
 
 	NeoBundle 'yuroyoro/yuroyoro256.vim'
+	NeoBundle 'tomasr/molokai'
 
 	NeoBundle 'myhere/vim-nodejs-complete'
 
@@ -51,7 +52,8 @@ filetype plugin indent on
 filetype indent on
 syntax on
 
-colorscheme yuroyoro256
+colorscheme molokai
+highlight Normal ctermbg=none
 
 set nobackup
 set noswapfile
