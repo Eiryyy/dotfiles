@@ -2,47 +2,52 @@ set nocompatible
 filetype off
 
 if has('vim_starting')
-	set runtimepath+=~/.vim/bundle/neobundle.vim
-	call neobundle#begin(expand('~/.vim/bundle/'))
-	NeoBundleFetch 'Shougo/neobundle.vim'
-	NeoBundle 'Shougo/neobundle.vim'
-	NeoBundle 'Shougo/vimproc'
-	NeoBundle 'VimClojure'
-	NeoBundle 'Shougo/vimshell'
-	NeoBundle 'Shougo/unite.vim'
-	NeoBundle 'Shougo/neocomplete.vim'
-	NeoBundle 'Shougo/neosnippet'
-	NeoBundle 'Shougo/neosnippet-snippets'
-	NeoBundle 'jpalardy/vim-slime'
-	NeoBundle 'scrooloose/syntastic'
-	NeoBundle 'majutsushi/tagbar'
-	NeoBundle 'rking/ag.vim'
-
-	NeoBundle 'mattn/emmet-vim'
-	NeoBundle 'tpope/vim-surround.git'
-	NeoBundle 'open-browser.vim'
-	NeoBundle 'mattn/webapi-vim'
-	NeoBundle 'hail2u/vim-css3-syntax'
-	NeoBundle 'osyo-manga/vim-over'
-	NeoBundle 'digitaltoad/vim-jade'
-	NeoBundle 'mustache/vim-mustache-handlebars'
-	NeoBundle 'groenewege/vim-less'
-	NeoBundle 'heavenshell/vim-jsdoc'
-	NeoBundle 'othree/yajs.vim'
-	NeoBundle 'mxw/vim-jsx'
-	NeoBundle 'stephpy/vim-yaml'
-	NeoBundle 'keith/swift.vim'
-	NeoBundle 'tpope/vim-fugitive'
-
-	NeoBundle 'itchyny/lightline.vim'
-
-	NeoBundle 'yuroyoro/yuroyoro256.vim'
-	NeoBundle 'tomasr/molokai'
-
-	NeoBundle 'myhere/vim-nodejs-complete'
-
-	call neobundle#end()
+	set rtp+=~/.vim/plugged/vim-plug
+	if !isdirectory(expand('~/.vim/plugged/vim-plug'))
+		echo 'install vim-plug...'
+		call system('mkdir -p ~/.vim/plugged/vim-plug')
+		call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+	end
 endif
+
+call plug#begin('~/.vim/plugged')
+
+	Plug 'Shougo/vimproc'
+	Plug 'VimClojure'
+	Plug 'Shougo/vimshell'
+	Plug 'Shougo/unite.vim'
+	Plug 'Shougo/neocomplete.vim'
+	Plug 'Shougo/neosnippet'
+	Plug 'Shougo/neosnippet-snippets'
+	Plug 'jpalardy/vim-slime'
+	Plug 'scrooloose/syntastic'
+	Plug 'majutsushi/tagbar'
+	Plug 'rking/ag.vim'
+
+	Plug 'mattn/emmet-vim'
+	Plug 'tpope/vim-surround'
+	Plug 'open-browser.vim'
+	Plug 'mattn/webapi-vim'
+	Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'less'] }
+	Plug 'osyo-manga/vim-over'
+	Plug 'digitaltoad/vim-jade', { 'for': ['jade'] }
+	Plug 'mustache/vim-mustache-handlebars', { 'for': ['hbs'] }
+	Plug 'groenewege/vim-less', { 'for': ['less'] }
+	Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
+	Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
+	Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx'] }
+	Plug 'stephpy/vim-yaml', { 'for': ['yaml'] }
+	Plug 'keith/swift.vim', { 'for': ['swift'] }
+	Plug 'tpope/vim-fugitive'
+	Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+
+	Plug 'itchyny/lightline.vim'
+
+	Plug 'tomasr/molokai'
+
+	Plug 'myhere/vim-nodejs-complete'
+
+call plug#end()
 
 if !has('gui_running')
 	set t_Co=256
