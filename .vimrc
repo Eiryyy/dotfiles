@@ -31,7 +31,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'less'] }
 	Plug 'osyo-manga/vim-over'
 	Plug 'digitaltoad/vim-jade', { 'for': ['jade'] }
-	Plug 'mustache/vim-mustache-handlebars', { 'for': ['hbs'] }
+	Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.handlebars'] }
 	Plug 'groenewege/vim-less', { 'for': ['less'] }
 	Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
 	Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
