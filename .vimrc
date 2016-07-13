@@ -33,13 +33,14 @@ call plug#begin('~/.vim/plugged')
 	Plug 'digitaltoad/vim-jade', { 'for': ['jade'] }
 	Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.handlebars'] }
 	Plug 'groenewege/vim-less', { 'for': ['less'] }
+	Plug 'othree/yajs', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
-	Plug 'othree/yajs.vim', { 'for': ['javascript', 'javascript.jsx'] }
-	Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx'] }
+	Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript.jsx'] }
+	Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
+	Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'stephpy/vim-yaml', { 'for': ['yaml'] }
 	Plug 'keith/swift.vim', { 'for': ['swift'] }
 	Plug 'tpope/vim-fugitive'
-	Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 
 	Plug 'itchyny/lightline.vim'
 
