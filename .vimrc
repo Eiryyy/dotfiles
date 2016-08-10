@@ -23,6 +23,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'scrooloose/syntastic'
 	Plug 'majutsushi/tagbar'
 	Plug 'rking/ag.vim'
+	Plug 'pmsorhaindo/syntastic-local-eslint.vim'
 
 	Plug 'mattn/emmet-vim'
 	Plug 'tpope/vim-surround'
@@ -35,7 +36,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'groenewege/vim-less', { 'for': ['less'] }
 	Plug 'othree/yajs', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
-	Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript.jsx'] }
+	Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx'] }
 	Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'stephpy/vim-yaml', { 'for': ['yaml'] }
@@ -206,7 +207,15 @@ function! LightLineFugitive()
 	return ''
 endfunction
 
+" syntastic settings
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_enable_signs = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:user_emmet_jsx = 1
 
 augroup vimrc-local
   autocmd!
