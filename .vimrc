@@ -218,6 +218,18 @@ let g:syntastic_check_on_wq = 0
 let g:user_emmet_jsx = 1
 let g:jsx_ext_required = 0
 
+let g:used_javascript_libs = 'jquery,underscore,backbone,react,flux,handlebars'
+
+augroup VimJsxPretty
+  autocmd!
+  autocmd VimEnter *.js,*.jsx highlight jsNoise ctermfg=197 cterm=bold guifg=#F92672 gui=bold
+  autocmd VimEnter *.js,*.jsx highlight jsArrowFunction ctermfg=197 cterm=bold guifg=#F92672 gui=bold
+  autocmd VimEnter *.js,*.jsx highlight jsObjectBraces ctermfg=197 cterm=bold guifg=#F92672 gui=bold
+  autocmd VimEnter *.js,*.jsx highlight jsFuncBraces ctermfg=118 guifg=#A6E22E
+  autocmd VimEnter *.js,*.jsx highlight jsFuncCall ctermfg=228 guifg=#A6A5AE
+  autocmd VimEnter *.js,*.jsx highlight jsBrackets cterm=bold gui=bold
+augroup END
+
 augroup vimrc-local
   autocmd!
   autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand('<afile>:p:h'))
