@@ -34,9 +34,9 @@ call plug#begin('~/.vim/plugged')
 	Plug 'digitaltoad/vim-jade', { 'for': ['jade'] }
 	Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.handlebars'] }
 	Plug 'groenewege/vim-less', { 'for': ['less'] }
-	Plug 'othree/yajs', { 'for': ['javascript', 'javascript.jsx'] }
+	Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx' ] }
 	Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
-	Plug 'mxw/vim-jsx', { 'for': ['javascript.jsx'] }
+	Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'stephpy/vim-yaml', { 'for': ['yaml'] }
@@ -216,6 +216,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:user_emmet_jsx = 1
+let g:jsx_ext_required = 0
 
 augroup vimrc-local
   autocmd!
