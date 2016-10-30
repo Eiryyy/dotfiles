@@ -26,6 +26,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'neomake/neomake'
 	Plug 'benjie/neomake-local-eslint.vim'
 
+	Plug 'scrooloose/nerdtree'
+
 	Plug 'mattn/emmet-vim'
 	Plug 'tpope/vim-surround'
 	Plug 'open-browser.vim'
@@ -89,7 +91,9 @@ set cursorline
 set noundofile
 set laststatus=2
 set rtp+=/usr/local/opt/fzf
+
 autocmd VimEnter,Colorscheme * :hi Cursorline cterm=underline ctermbg=234
+autocmd VimEnter * NERDTree
 
 set list
 set listchars=tab:▸\ ,extends:›,precedes:‹
