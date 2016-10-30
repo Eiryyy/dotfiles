@@ -20,10 +20,11 @@ call plug#begin('~/.vim/plugged')
 	Plug 'Shougo/neosnippet'
 	Plug 'Shougo/neosnippet-snippets'
 	Plug 'jpalardy/vim-slime'
-	Plug 'scrooloose/syntastic'
 	Plug 'majutsushi/tagbar'
 	Plug 'rking/ag.vim'
-	Plug 'pmsorhaindo/syntastic-local-eslint.vim'
+
+	Plug 'neomake/neomake'
+	Plug 'benjie/neomake-local-eslint.vim'
 
 	Plug 'mattn/emmet-vim'
 	Plug 'tpope/vim-surround'
@@ -87,6 +88,7 @@ set incsearch
 set cursorline
 set noundofile
 set laststatus=2
+set rtp+=/usr/local/opt/fzf
 autocmd VimEnter,Colorscheme * :hi Cursorline cterm=underline ctermbg=234
 
 set list
@@ -122,6 +124,9 @@ inoremap <silent> <ESC> <ESC>:set iminsert=0<CR>
 nmap <ESC><ESC> ;nohlsearch<CR><ESC>
 
 autocmd BufWritePre * :%s/\s\+$//ge
+
+autocmd! BufWritePost * Neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 set foldlevelstart=99
 
@@ -207,13 +212,14 @@ function! LightLineFugitive()
 	return ''
 endfunction
 
+
 " syntastic settings
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_enable_signs = 1
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_enable_signs = 1
+"let g:syntastic_always_populate_loc_list = 0
+"let g:syntastic_auto_loc_list = 0
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 let g:user_emmet_jsx = 1
 let g:jsx_ext_required = 0
