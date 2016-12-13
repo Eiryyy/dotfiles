@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 set nocompatible
 filetype off
 
@@ -42,6 +44,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
+	Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
 	Plug 'stephpy/vim-yaml', { 'for': ['yaml'] }
 	Plug 'keith/swift.vim', { 'for': ['swift'] }
 	Plug 'tpope/vim-fugitive'
@@ -49,6 +52,7 @@ call plug#begin('~/.vim/plugged')
 	Plug 'itchyny/lightline.vim'
 
 	Plug 'tomasr/molokai'
+	Plug 'aereal/vim-colors-japanesque'
 
 	Plug 'myhere/vim-nodejs-complete'
 
