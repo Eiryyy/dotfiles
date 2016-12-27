@@ -4,64 +4,64 @@ set nocompatible
 filetype off
 
 if has('vim_starting')
-	set rtp+=~/.vim/plugged/vim-plug
-	if !isdirectory(expand('~/.vim/plugged/vim-plug'))
-		echo 'install vim-plug...'
-		call system('mkdir -p ~/.vim/plugged/vim-plug')
-		call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
-	end
+    set rtp+=~/.vim/plugged/vim-plug
+    if !isdirectory(expand('~/.vim/plugged/vim-plug'))
+        echo 'install vim-plug...'
+        call system('mkdir -p ~/.vim/plugged/vim-plug')
+        call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+    end
 endif
 
 call plug#begin('~/.vim/plugged')
 
-	Plug 'Shougo/vimproc'
-	Plug 'VimClojure'
-	Plug 'Shougo/vimshell'
-	Plug 'Shougo/unite.vim'
-	Plug 'Shougo/neocomplete.vim'
-	Plug 'Shougo/neosnippet'
-	Plug 'Shougo/neosnippet-snippets'
-	Plug 'jpalardy/vim-slime'
-	Plug 'majutsushi/tagbar'
-	Plug 'rking/ag.vim'
+    Plug 'Shougo/vimproc'
+    Plug 'VimClojure'
+    Plug 'Shougo/vimshell'
+    Plug 'Shougo/unite.vim'
+    Plug 'Shougo/neocomplete.vim'
+    Plug 'Shougo/neosnippet'
+    Plug 'Shougo/neosnippet-snippets'
+    Plug 'jpalardy/vim-slime'
+    Plug 'majutsushi/tagbar'
+    Plug 'rking/ag.vim'
 
-	Plug 'neomake/neomake'
-	Plug 'benjie/neomake-local-eslint.vim'
+    Plug 'neomake/neomake'
+    Plug 'benjie/neomake-local-eslint.vim'
 
-	Plug 'scrooloose/nerdtree'
+    Plug 'scrooloose/nerdtree'
 
-	Plug 'mattn/emmet-vim'
-	Plug 'tpope/vim-surround'
-	Plug 'open-browser.vim'
-	Plug 'mattn/webapi-vim'
-	Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'less'] }
-	Plug 'osyo-manga/vim-over'
-	Plug 'digitaltoad/vim-jade', { 'for': ['jade'] }
-	Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.handlebars'] }
-	Plug 'groenewege/vim-less', { 'for': ['less'] }
-	Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx' ] }
-	Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
-	Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
-	Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
-	Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
-	Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
-	Plug 'stephpy/vim-yaml', { 'for': ['yaml'] }
-	Plug 'keith/swift.vim', { 'for': ['swift'] }
-	Plug 'tpope/vim-fugitive'
+    Plug 'mattn/emmet-vim'
+    Plug 'tpope/vim-surround'
+    Plug 'open-browser.vim'
+    Plug 'mattn/webapi-vim'
+    Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'less'] }
+    Plug 'osyo-manga/vim-over'
+    Plug 'digitaltoad/vim-jade', { 'for': ['jade'] }
+    Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.handlebars'] }
+    Plug 'groenewege/vim-less', { 'for': ['less'] }
+    Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx' ] }
+    Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
+    Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
+    Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
+    Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
+    Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
+    Plug 'stephpy/vim-yaml', { 'for': ['yaml'] }
+    Plug 'keith/swift.vim', { 'for': ['swift'] }
+    Plug 'tpope/vim-fugitive'
 
-	Plug 'Yggdroot/indentLine'
+    Plug 'Yggdroot/indentLine'
 
-	Plug 'itchyny/lightline.vim'
+    Plug 'itchyny/lightline.vim'
 
-	Plug 'tomasr/molokai'
-	Plug 'aereal/vim-colors-japanesque'
+    Plug 'tomasr/molokai'
+    Plug 'aereal/vim-colors-japanesque'
 
-	Plug 'myhere/vim-nodejs-complete'
+    Plug 'myhere/vim-nodejs-complete'
 
 call plug#end()
 
 if !has('gui_running')
-	set t_Co=256
+    set t_Co=256
 endif
 
 filetype plugin indent on
@@ -77,7 +77,7 @@ set tabstop=4
 set shiftwidth=4
 set smartindent
 set autoindent
-set noexpandtab
+set expandtab
 set scrolloff=5
 set textwidth=0
 set autoread
@@ -190,36 +190,36 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CombleteJS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CombleteTags
 autocmd FileType css setlocal omnifunc=csscomplete#CombleteCSS
 if !exists('g:neocomplete#sources#omni#input_patterns')
-	let g:neocomplete#sources#omni#input_patterns = {}
+    let g:neocomplete#sources#omni#input_patterns = {}
 endif
 "let g:neocomplete#sources#omni#input_patterns.javascript = ['nodejscomplete#CompleteJS', 'javascriptcomplete#CompleteJS']
 let g:lightline = {
-	\ 'active': {
-	\     'left': [ ['mode' ], [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-	\ },
-	\ 'colorscheme': 'wombat',
-	\ 'component_function': {
-	\     'readonly': 'LightLineReadonly',
-	\     'fugitive': 'LightLineFugitive'
-	\ }
-	\ }
+    \ 'active': {
+    \     'left': [ ['mode' ], [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+    \ },
+    \ 'colorscheme': 'wombat',
+    \ 'component_function': {
+    \     'readonly': 'LightLineReadonly',
+    \     'fugitive': 'LightLineFugitive'
+    \ }
+    \ }
 
 function! LightLineReadonly()
-	if &filetype == "help"
-		return ""
-	elseif &readonly
-		return "⭤"
-	else
-		return ""
-	endif
+    if &filetype == "help"
+        return ""
+    elseif &readonly
+        return "⭤"
+    else
+        return ""
+    endif
 endfunction
 
 function! LightLineFugitive()
-	if exists("*fugitive#head")
-		let _ = fugitive#head()
-		return strlen(_) ? '⭠ '._ : ''
-	endif
-	return ''
+    if exists("*fugitive#head")
+        let _ = fugitive#head()
+        return strlen(_) ? '⭠ '._ : ''
+    endif
+    return ''
 endfunction
 
 
@@ -243,25 +243,25 @@ let g:indentLine_char = '¦'
 let g:indent_guides_start_level = 2
 
 augroup VimJsxPretty
-  autocmd!
-  autocmd VimEnter *.js,*.jsx highlight jsNoise ctermfg=197 cterm=bold guifg=#F92672 gui=bold
-  autocmd VimEnter *.js,*.jsx highlight jsArrowFunction ctermfg=197 cterm=bold guifg=#F92672 gui=bold
-  autocmd VimEnter *.js,*.jsx highlight jsObjectBraces ctermfg=197 cterm=bold guifg=#F92672 gui=bold
-  autocmd VimEnter *.js,*.jsx highlight jsFuncBraces ctermfg=118 guifg=#A6E22E
-  autocmd VimEnter *.js,*.jsx highlight jsFuncCall ctermfg=228 guifg=#A6A5AE
-  autocmd VimEnter *.js,*.jsx highlight jsBrackets cterm=bold gui=bold
+    autocmd!
+    autocmd VimEnter *.js,*.jsx highlight jsNoise ctermfg=197 cterm=bold guifg=#F92672 gui=bold
+    autocmd VimEnter *.js,*.jsx highlight jsArrowFunction ctermfg=197 cterm=bold guifg=#F92672 gui=bold
+    autocmd VimEnter *.js,*.jsx highlight jsObjectBraces ctermfg=197 cterm=bold guifg=#F92672 gui=bold
+    autocmd VimEnter *.js,*.jsx highlight jsFuncBraces ctermfg=118 guifg=#A6E22E
+    autocmd VimEnter *.js,*.jsx highlight jsFuncCall ctermfg=228 guifg=#A6A5AE
+    autocmd VimEnter *.js,*.jsx highlight jsBrackets cterm=bold gui=bold
 augroup END
 
 augroup vimrc-local
-  autocmd!
-  autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand('<afile>:p:h'))
+    autocmd!
+    autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand('<afile>:p:h'))
 augroup END
 
 function! s:vimrc_local(loc)
-  let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)
-  for i in reverse(filter(files, 'filereadable(v:val)'))
-    source `=i`
-  endfor
+    let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)
+    for i in reverse(filter(files, 'filereadable(v:val)'))
+        source `=i`
+    endfor
 endfunction
 
 noremap ; :
