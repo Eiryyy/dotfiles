@@ -49,6 +49,8 @@ call plug#begin('~/.vim/plugged')
 	Plug 'keith/swift.vim', { 'for': ['swift'] }
 	Plug 'tpope/vim-fugitive'
 
+	Plug 'Yggdroot/indentLine'
+
 	Plug 'itchyny/lightline.vim'
 
 	Plug 'tomasr/molokai'
@@ -233,6 +235,12 @@ let g:user_emmet_jsx = 1
 let g:jsx_ext_required = 0
 
 let g:used_javascript_libs = 'jquery,underscore,backbone,react,flux,handlebars'
+
+let g:indentLine_fileTypeExclude = ['help', 'nerdtree']
+let g:indentLine_char = '¦'
+
+" indentLine settings
+let g:indent_guides_start_level = 2
 
 augroup VimJsxPretty
   autocmd!
