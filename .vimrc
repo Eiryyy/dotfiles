@@ -44,7 +44,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
     Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
     Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
-    Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
+"   Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
     Plug 'stephpy/vim-yaml', { 'for': ['yaml'] }
     Plug 'keith/swift.vim', { 'for': ['swift'] }
     Plug 'tpope/vim-fugitive'
@@ -97,9 +97,12 @@ set cursorline
 set noundofile
 set laststatus=2
 set rtp+=/usr/local/opt/fzf
+set termguicolors
 
+let NERDTreeShowHidden = 1
 autocmd VimEnter,Colorscheme * :hi Cursorline cterm=underline ctermbg=234
-autocmd VimEnter * NERDTree
+autocmd StdinReadPre * let s:std_in = 1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 set list
 set listchars=tab:▸\ ,extends:›,precedes:‹
