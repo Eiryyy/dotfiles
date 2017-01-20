@@ -4,67 +4,67 @@ set nocompatible
 filetype off
 
 if has('vim_starting')
-    set rtp+=~/.vim/plugged/vim-plug
-    if !isdirectory(expand('~/.vim/plugged/vim-plug'))
-        echo 'install vim-plug...'
-        call system('mkdir -p ~/.vim/plugged/vim-plug')
-        call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
-    end
+  set rtp+=~/.vim/plugged/vim-plug
+  if !isdirectory(expand('~/.vim/plugged/vim-plug'))
+    echo 'install vim-plug...'
+    call system('mkdir -p ~/.vim/plugged/vim-plug')
+    call system('git clone https://github.com/junegunn/vim-plug.git ~/.vim/plugged/vim-plug/autoload')
+  end
 endif
 
 call plug#begin('~/.vim/plugged')
 
-    Plug 'Shougo/vimproc'
-    Plug 'VimClojure'
-    Plug 'Shougo/vimshell'
-    Plug 'Shougo/unite.vim'
-    if has('nvim')
-        Plug 'Shougo/deoplete.nvim',{ 'do': ':UpdateRemotePlugins' }
-    else
-        Plug 'Shougo/neocomplete.vim'
-    endif
-    Plug 'Shougo/neosnippet'
-    Plug 'Shougo/neosnippet-snippets'
-    Plug 'jpalardy/vim-slime'
-    Plug 'majutsushi/tagbar'
-    Plug 'rking/ag.vim'
+  Plug 'Shougo/vimproc'
+  Plug 'VimClojure'
+  Plug 'Shougo/vimshell'
+  Plug 'Shougo/unite.vim'
+  if has('nvim')
+  Plug 'Shougo/deoplete.nvim',{ 'do': ':UpdateRemotePlugins' }
+  else
+    Plug 'Shougo/neocomplete.vim'
+  endif
+  Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
+  Plug 'jpalardy/vim-slime'
+  Plug 'majutsushi/tagbar'
+  Plug 'rking/ag.vim'
 
-    Plug 'neomake/neomake'
+  Plug 'neomake/neomake'
 
-    Plug 'scrooloose/nerdtree'
+  Plug 'scrooloose/nerdtree'
 
-    Plug 'mattn/emmet-vim'
-    Plug 'tpope/vim-surround'
-    Plug 'open-browser.vim'
-    Plug 'mattn/webapi-vim'
-    Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'less'] }
-    Plug 'osyo-manga/vim-over'
-    Plug 'digitaltoad/vim-jade', { 'for': ['jade'] }
-    Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.handlebars'] }
-    Plug 'groenewege/vim-less', { 'for': ['less'] }
-    Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx' ] }
-    Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
-    Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
-    Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
-    Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
-"   Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
-    Plug 'stephpy/vim-yaml', { 'for': ['yaml'] }
-    Plug 'keith/swift.vim', { 'for': ['swift'] }
-    Plug 'tpope/vim-fugitive'
+  Plug 'mattn/emmet-vim'
+  Plug 'tpope/vim-surround'
+  Plug 'open-browser.vim'
+  Plug 'mattn/webapi-vim'
+  Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'less'] }
+  Plug 'osyo-manga/vim-over'
+  Plug 'digitaltoad/vim-jade', { 'for': ['jade'] }
+  Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.handlebars'] }
+  Plug 'groenewege/vim-less', { 'for': ['less'] }
+  Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx' ] }
+" Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
+  Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
+  Plug 'stephpy/vim-yaml', { 'for': ['yaml'] }
+  Plug 'keith/swift.vim', { 'for': ['swift'] }
+  Plug 'tpope/vim-fugitive'
 
-    Plug 'Yggdroot/indentLine'
+  Plug 'Yggdroot/indentLine'
 
-    Plug 'itchyny/lightline.vim'
+  Plug 'itchyny/lightline.vim'
 
-    Plug 'tomasr/molokai'
-    Plug 'aereal/vim-colors-japanesque'
-
-    Plug 'myhere/vim-nodejs-complete'
+  Plug 'tomasr/molokai'
+  Plug 'aereal/vim-colors-japanesque'
+  Plug 'jacoborus/tender.vim'
+  Plug 'kristijanhusak/vim-hybrid-material'
 
 call plug#end()
 
 if !has('gui_running')
-    set t_Co=256
+  set t_Co=256
 endif
 
 filetype plugin indent on
@@ -76,8 +76,9 @@ highlight Normal ctermbg=none
 
 set nobackup
 set noswapfile
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set smartindent
 set autoindent
 set expandtab
@@ -100,7 +101,9 @@ set cursorline
 set noundofile
 set laststatus=2
 set rtp+=/usr/local/opt/fzf
+set background=dark
 set termguicolors
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 
 let NERDTreeShowHidden = 1
 autocmd VimEnter,Colorscheme * :hi Cursorline cterm=underline ctermbg=234
@@ -150,88 +153,104 @@ set foldlevelstart=99
 
 let g:acp_enableAtStartup = 0
 if !has('nvim')
-    " Use neocomplete.
-    let g:neocomplete#enable_at_startup = 1
-    " Use smartcase.
-    let g:neocomplete#enable_smart_case = 1
-    " Set minimum syntax keyword length.
-    let g:neocomplete#sources#syntax#min_keyword_length = 3
-    let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+  " Use neocomplete.
+  let g:neocomplete#enable_at_startup = 1
+  " Use smartcase.
+  let g:neocomplete#enable_smart_case = 1
+  " Set minimum syntax keyword length.
+  let g:neocomplete#sources#syntax#min_keyword_length = 3
+  let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-    " Define dictionary.
-    let g:neocomplete#sources#dictionary#dictionaries = {
-                \ 'default' : '',
-                \ 'vimshell' : $HOME.'/.vimshell_hist',
-                \ 'scheme' : $HOME.'/.gosh_completions'
-                \ }
+  " Define dictionary.
+  let g:neocomplete#sources#dictionary#dictionaries = {
+   \ 'default' : '',
+   \ 'vimshell' : $HOME.'/.vimshell_hist',
+   \ 'scheme' : $HOME.'/.gosh_completions'
+   \ }
 
-    " Define keyword.
-    if !exists('g:neocomplete#keyword_patterns')
-        let g:neocomplete#keyword_patterns = {}
-    endif
-    let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+  " Define keyword.
+  if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+  endif
+  let g:neocomplete#keyword_patterns['default'] = '\h\w*'
 
-    " Plugin key-mappings.
-    inoremap <expr><C-g>     neocomplete#undo_completion()
-    inoremap <expr><C-l>     neocomplete#complete_common_string()
+  " Plugin key-mappings.
+  inoremap <expr><C-g>     neocomplete#undo_completion()
+  inoremap <expr><C-l>     neocomplete#complete_common_string()
 
-    " Recommended key-mappings.
-    " <CR>: close popup and save indent.
-    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-    function! s:my_cr_function()
-        return neocomplete#close_popup() . "\<CR>"
-        " For no inserting <CR> key.
-        "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-    endfunction
-    " <TAB>: completion.
-    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-    " <C-h>, <BS>: close popup and delete backword char.
-    inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><C-y>  neocomplete#close_popup()
-    inoremap <expr><C-e>  neocomplete#cancel_popup()
-    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k>     <Plug>(neosnippet_expand_target)
-    let g:neocomplete#enable_insert_char_pre=1
+  " Recommended key-mappings.
+  " <CR>: close popup and save indent.
+  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+  function! s:my_cr_function()
+    return neocomplete#close_popup() . "\<CR>"
+    " For no inserting <CR> key.
+    "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
+  endfunction
+  " <TAB>: completion.
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  " <C-h>, <BS>: close popup and delete backword char.
+  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><C-y>  neocomplete#close_popup()
+  inoremap <expr><C-e>  neocomplete#cancel_popup()
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+  let g:neocomplete#enable_insert_char_pre=1
 
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CombleteJS
-    autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CombleteTags
-    autocmd FileType css setlocal omnifunc=csscomplete#CombleteCSS
-    if !exists('g:neocomplete#sources#omni#input_patterns')
-        let g:neocomplete#sources#omni#input_patterns = {}
-    endif
-    "let g:neocomplete#sources#omni#input_patterns.javascript = ['nodejscomplete#CompleteJS', 'javascriptcomplete#CompleteJS']
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CombleteJS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CombleteTags
+  autocmd FileType css setlocal omnifunc=csscomplete#CombleteCSS
+  if !exists('g:neocomplete#sources#omni#input_patterns')
+    let g:neocomplete#sources#omni#input_patterns = {}
+  endif
+  "let g:neocomplete#sources#omni#input_patterns.javascript = ['nodejscomplete#CompleteJS', 'javascriptcomplete#CompleteJS']
+  else
+    let g:deoplete#enable_at_startup = 1
+    inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 endif
+
 let g:lightline = {
-    \ 'active': {
-    \     'left': [ ['mode' ], [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
-    \ },
-    \ 'colorscheme': 'wombat',
-    \ 'component_function': {
-    \     'readonly': 'LightLineReadonly',
-    \     'fugitive': 'LightLineFugitive'
-    \ }
-    \ }
+ \ 'active': {
+ \     'left': [['mode', 'paste'], ['fugitive', 'readonly', 'filename', 'modified']]
+ \ },
+ \ 'colorscheme': 'wombat',
+ \ 'component_function': {
+ \     'readonly': 'LightLineReadonly',
+ \     'modified': 'LightlineModified',
+ \     'fugitive': 'LightLineFugitive'
+ \ }
+ \ }
 
 function! LightLineReadonly()
-    if &filetype == "help"
-        return ""
-    elseif &readonly
-        return "⭤"
-    else
-        return ""
-    endif
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "⭤"
+  else
+    return ""
+  endif
+endfunction
+
+function! LightlineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
 endfunction
 
 function! LightLineFugitive()
-    if exists("*fugitive#head")
-        let _ = fugitive#head()
-        return strlen(_) ? '⭠ '._ : ''
-    endif
-    return ''
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? '⭠ '._ : ''
+  endif
+  return ''
 endfunction
-
 
 " syntastic settings
 "let g:syntastic_javascript_checkers = ['eslint']
@@ -244,7 +263,8 @@ endfunction
 let g:user_emmet_jsx = 1
 let g:jsx_ext_required = 0
 
-let g:used_javascript_libs = 'jquery,underscore,backbone,react,flux,handlebars'
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
 
 let g:indentLine_fileTypeExclude = ['help', 'nerdtree']
 let g:indentLine_char = '¦'
@@ -252,29 +272,30 @@ let g:indentLine_char = '¦'
 " indentLine settings
 let g:indent_guides_start_level = 2
 
-augroup VimJsxPretty
-    autocmd!
-    autocmd VimEnter *.js,*.jsx highlight jsNoise ctermfg=197 cterm=bold guifg=#F92672 gui=bold
-    autocmd VimEnter *.js,*.jsx highlight jsArrowFunction ctermfg=197 cterm=bold guifg=#F92672 gui=bold
-    autocmd VimEnter *.js,*.jsx highlight jsObjectBraces ctermfg=197 cterm=bold guifg=#F92672 gui=bold
-    autocmd VimEnter *.js,*.jsx highlight jsFuncBraces ctermfg=118 guifg=#A6E22E
-    autocmd VimEnter *.js,*.jsx highlight jsFuncCall ctermfg=228 guifg=#A6A5AE
-    autocmd VimEnter *.js,*.jsx highlight jsBrackets cterm=bold gui=bold
-augroup END
+"augroup VimJsxPretty
+"  autocmd!
+"  autocmd VimEnter *.js,*.jsx highlight jsNoise ctermfg=197 cterm=bold guifg=#F92672 gui=bold
+"  autocmd VimEnter *.js,*.jsx highlight jsArrowFunction ctermfg=197 cterm=bold guifg=#F92672 gui=bold
+"  autocmd VimEnter *.js,*.jsx highlight jsObjectBraces ctermfg=197 cterm=bold guifg=#F92672 gui=bold
+"  autocmd VimEnter *.js,*.jsx highlight jsFuncBraces ctermfg=118 guifg=#A6E22E
+"  autocmd VimEnter *.js,*.jsx highlight jsFuncCall ctermfg=228 guifg=#A6A5AE
+"  autocmd VimEnter *.js,*.jsx highlight jsBrackets cterm=bold gui=bold
+"augroup END
+let g:vim_jsx_pretty_colorful_config = 1
 
 augroup vimrc-local
-    autocmd!
-    autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand('<afile>:p:h'))
+  autocmd!
+  autocmd BufNewFile,BufReadPost * call s:vimrc_local(expand('<afile>:p:h'))
 augroup END
 
 function! s:vimrc_local(loc)
-    let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)
-    for i in reverse(filter(files, 'filereadable(v:val)'))
-        source `=i`
-    endfor
+  let files = findfile('.vimrc.local', escape(a:loc, ' ') . ';', -1)
+  for i in reverse(filter(files, 'filereadable(v:val)'))
+    source `=i`
+  endfor
 endfunction
 
 noremap ; :
 
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+let g:ruby_path = ''
+
