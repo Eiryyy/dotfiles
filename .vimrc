@@ -214,6 +214,10 @@ if !has('nvim')
   else
     let g:deoplete#enable_at_startup = 1
     inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+    let g:monster#completion#rcodetools#backend = "async_rct_complete"
+    let g:deoplete#sources#omni#input_patterns = {
+          \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+          \}
 endif
 
 let g:lightline = {
