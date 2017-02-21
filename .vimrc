@@ -301,6 +301,11 @@ function! s:vimrc_local(loc)
   endfor
 endfunction
 
+"over.vim
+nnoremap <silent> <Leader>m :OverCommandLine<CR>
+nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
+nnoremap sup y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
+
 noremap ; :
 
 let g:ruby_path = ''
