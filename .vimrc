@@ -30,32 +30,38 @@ call plug#begin('~/.vim/plugged')
   Plug 'rking/ag.vim'
 
   Plug 'neomake/neomake'
-
   Plug 'scrooloose/nerdtree'
-
-  Plug 'mattn/emmet-vim'
   Plug 'tpope/vim-surround'
-  Plug 'open-browser.vim'
   Plug 'mattn/webapi-vim'
-  Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'less'] }
   Plug 'osyo-manga/vim-over'
-  Plug 'digitaltoad/vim-jade', { 'for': ['jade'] }
-  Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.handlebars'] }
-  Plug 'groenewege/vim-less', { 'for': ['less'] }
+  Plug 'tpope/vim-fugitive'
+
+"JavaScript
   Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx' ] }
-" Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
   Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
+" Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
 " Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'flowtype/vim-flow', { 'for': ['javascript', 'javascript.jsx'] }
+
+"HTML/CSS
+  Plug 'hail2u/vim-css3-syntax', { 'for': ['css', 'less'] }
+  Plug 'groenewege/vim-less', { 'for': ['less'] }
+  Plug 'mattn/emmet-vim'
+  Plug 'digitaltoad/vim-jade', { 'for': ['jade'] }
+  Plug 'mustache/vim-mustache-handlebars', { 'for': ['html.handlebars'] }
+
+"Ruby
   Plug 'stephpy/vim-yaml', { 'for': ['yaml'] }
+
+"Swift
   Plug 'keith/swift.vim', { 'for': ['swift'] }
-  Plug 'tpope/vim-fugitive'
 
+"Appearance
   Plug 'Yggdroot/indentLine'
-
   Plug 'itchyny/lightline.vim'
 
+"Colorscheme
   Plug 'tomasr/molokai'
   Plug 'aereal/vim-colors-japanesque'
   Plug 'jacoborus/tender.vim'
