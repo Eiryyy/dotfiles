@@ -116,7 +116,17 @@ setopt extended_glob
 # キーバインド
 
 # ^R で履歴検索をするときに * でワイルドカードを使用出来るようにする
-bindkey '^R' history-incremental-pattern-search-backward
+# bindkey '^R' history-incremental-pattern-search-backward
+
+# ^R でpecoを使う
+function peco-history-selection() {
+  BUFFER=`history -n 1 | tail -r | awk '!a[$0]++' | peco`
+  CURSOR=$#BUFFER
+  zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
 
 ########################################
 # エイリアス

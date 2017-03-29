@@ -56,6 +56,7 @@ call plug#begin('~/.vim/plugged')
 
 "Swift
   Plug 'keith/swift.vim', { 'for': ['swift'] }
+  Plug 'landaire/deoplete-swift', { 'for': ['swift'] }
 
 "Appearance
   Plug 'Yggdroot/indentLine'
@@ -66,6 +67,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'aereal/vim-colors-japanesque'
   Plug 'jacoborus/tender.vim'
   Plug 'kristijanhusak/vim-hybrid-material'
+  Plug 'KeitaNakamura/neodark.vim'
 
 call plug#end()
 
@@ -77,8 +79,9 @@ filetype plugin indent on
 filetype indent on
 syntax on
 
-colorscheme molokai
-highlight Normal ctermbg=none
+let g:neodark#background='black'
+"let g:neodark#terminal_transparent=1
+colorscheme neodark
 
 set nobackup
 set noswapfile
@@ -110,6 +113,9 @@ set rtp+=/usr/local/opt/fzf
 set background=dark
 set termguicolors
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
+
+
+highlight Normal ctermbg=none
 
 let NERDTreeShowHidden = 1
 autocmd VimEnter,Colorscheme * :hi Cursorline cterm=underline ctermbg=234
@@ -224,7 +230,7 @@ let g:lightline = {
  \ 'active': {
  \     'left': [['mode', 'paste'], ['fugitive', 'readonly', 'filename', 'modified']]
  \ },
- \ 'colorscheme': 'wombat',
+ \ 'colorscheme': 'neodark',
  \ 'component_function': {
  \     'readonly': 'LightLineReadonly',
  \     'modified': 'LightlineModified',
@@ -313,4 +319,3 @@ nnoremap sup y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!
 noremap ; :
 
 let g:ruby_path = ''
-
