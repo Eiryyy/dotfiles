@@ -39,6 +39,7 @@ call plug#begin('~/.vim/plugged')
 "JavaScript
   Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx' ] }
   Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript', 'javascript.jsx'] }
+  Plug 'posva/vim-vue', { 'for': ['vue'] }
 " Plug 'heavenshell/vim-jsdoc', { 'for': ['javascript'] }
 " Plug 'othree/javascript-libraries-syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
 " Plug 'othree/es.next.syntax.vim', { 'for': ['javascript', 'javascript.jsx'] }
