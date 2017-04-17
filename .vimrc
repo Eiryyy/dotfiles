@@ -158,7 +158,9 @@ nmap <ESC><ESC> ;nohlsearch<CR><ESC>
 autocmd BufWritePre * :%s/\s\+$//ge
 
 autocmd! BufWritePost * Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
+autocmd! InsertLeave *.js Neomake
+autocmd! VimLeave *.js  !eslint_d stop
+let g:neomake_javascript_enabled_makers = ['eslint_d']
 let g:neomake_error_sign = {'text': '✖', 'texthl': 'ErrorMsg'}
 let g:neomake_warning_sign = {'text': '⚠', 'texthl': 'WarningMsg'}
 
