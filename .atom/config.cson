@@ -1,0 +1,40 @@
+"*":
+  "autocomplete-ruby":
+    rsensePath: "/Users/tsukasa/.rbenv/shims/rsense"
+  core:
+    disabledPackages: [
+      "terminal-plus"
+    ]
+    ignoredNames: [
+      ".git"
+      ".svn"
+      ".DS_Store"
+    ]
+    telemetryConsent: "limited"
+  editor:
+    fontFamily: "Ricty"
+    fontSize: 14
+    lineHeight: 1.2
+    preferredLineLength: 200
+    showIndentGuide: true
+    softWrapAtPreferredLineLength: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "6ae5e7a2-5dbf-de5b-6c8f-e136b3e8a118"
+  linter: {}
+  "linter-eslint": {}
+  "linter-ui-default":
+    showPanel: true
+  metrics:
+    userId: "62bd999e8fd4f3d6a6e9b566c167ed7d6fdb41b0"
+  "release-notes":
+    viewedVersion: "0.94.0"
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  "vim-mode-plus":
+    incrementalSearch: true
+    useClipboardAsDefaultRegister: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
