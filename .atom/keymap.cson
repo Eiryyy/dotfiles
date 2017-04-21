@@ -25,3 +25,7 @@
   '; q enter': 'core:close'
   '; s p enter':  'pane:split-down'
   '; v s p enter':  'pane:split-right'
+
+'body atom-text-editor.autocomplete-active':
+	'ctrl-j': 'autocomplete-plus:move-down'
+	'ctrl-k': 'autocomplete-plus:move-up'

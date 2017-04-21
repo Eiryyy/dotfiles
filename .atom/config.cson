@@ -1,4 +1,7 @@
 "*":
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    useCoreMovementCommands: false
   "autocomplete-ruby":
     rsensePath: "/Users/tsukasa/.rbenv/shims/rsense"
   core:
