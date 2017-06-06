@@ -15,7 +15,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
   Plug 'Shougo/vimproc'
-  Plug 'VimClojure'
+  Plug 'vim-scripts/VimClojure'
   Plug 'Shougo/vimshell'
   Plug 'Shougo/unite.vim'
   if has('nvim')
@@ -80,7 +80,7 @@ filetype plugin indent on
 filetype indent on
 syntax on
 
-let g:neodark#background='black'
+let g:neodark#background='#191919'
 "let g:neodark#terminal_transparent=1
 colorscheme neodark
 
