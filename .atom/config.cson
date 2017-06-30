@@ -1,12 +1,14 @@
 "*":
+  Hydrogen: {}
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     useCoreMovementCommands: false
   "autocomplete-ruby":
-    rsensePath: "/Users/tsukasa/.rbenv/shims/rsense"
+    rsensePath: "~/.rbenv/shims/rsense"
   core:
     disabledPackages: [
       "terminal-plus"
+      "language-gfm"
     ]
     ignoredNames: [
       ".git"
@@ -27,13 +29,23 @@
   linter: {}
   "linter-eslint": {}
   "linter-ui-default":
+    panelHeight: 69
     showPanel: true
   metrics:
     userId: "62bd999e8fd4f3d6a6e9b566c167ed7d6fdb41b0"
+  minimap:
+    plugins:
+      cursorline: true
+      cursorlineDecorationsZIndex: 0
+      "find-and-replace": true
+      "find-and-replaceDecorationsZIndex": 0
+      "git-diff": true
+      "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
   "release-notes":
     viewedVersion: "0.94.0"
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   "vim-mode-plus":
     incrementalSearch: true
     useClipboardAsDefaultRegister: true
