@@ -1,14 +1,48 @@
 "*":
   Hydrogen: {}
+  "atom-ide-ui":
+    "atom-ide-diagnostics-ui": {}
+    "atom-ide-outline-view":
+      nameOnly: true
+    use: {}
+  "autocomplete-elixir":
+    elixirPath: "/usr/local/bin/elixir"
+    erlangHome: "/usr/local/bin"
+  "autocomplete-paths":
+    maxFileCount: 5000
   "autocomplete-plus":
     backspaceTriggersAutocomplete: true
     useCoreMovementCommands: false
   "autocomplete-ruby":
-    rsensePath: "~/.rbenv/shims/rsense"
+    rsensePath: "/Users/t.kawagishi/.rbenv/shims/rsense"
   core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".flowconfig"
+        ".hgrc"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
     disabledPackages: [
       "terminal-plus"
       "language-gfm"
+      "minimap"
+      "linter"
+      "ide-typescript"
+      "nuclide"
+      "language-javascript-jsx"
+      "react"
+      "autocomplete-flow"
+      "Remote-FTP"
+      "linter-flow"
+      "flow-ide"
+      "markdown-preview"
+      "ide-go"
     ]
     ignoredNames: [
       ".git"
@@ -16,21 +50,35 @@
       ".DS_Store"
     ]
     telemetryConsent: "limited"
+  docker:
+    supressNotifications: true
   editor:
     fontFamily: "Ricty"
-    fontSize: 14
     lineHeight: 1.2
     preferredLineLength: 200
     showIndentGuide: true
     softWrapAtPreferredLineLength: true
-    tabType: "soft"
+  "editor-background":
+    blurRadius: 0
+    image:
+      overlayColor: "#000000"
+    imageURL: ""
+    video:
+      youTubeURL: "https://www.youtube.com/watch?v=8LiMIe2Isgk"
   "exception-reporting":
     userId: "6ae5e7a2-5dbf-de5b-6c8f-e136b3e8a118"
+  "flow-ide":
+    showUncovered: true
+  "go-plus":
+    config:
+      gopath: "~/go"
+  "ide-flowtype":
+    tryFlowBin: true
+  "ide-rust": {}
   linter: {}
+  "linter-elixirc": {}
   "linter-eslint": {}
-  "linter-ui-default":
-    panelHeight: 69
-    showPanel: true
+  "linter-ui-default": {}
   metrics:
     userId: "62bd999e8fd4f3d6a6e9b566c167ed7d6fdb41b0"
   minimap:
@@ -43,8 +91,32 @@
       "git-diffDecorationsZIndex": 0
       "highlight-selected": true
       "highlight-selectedDecorationsZIndex": 0
+  nuclide:
+    "nuclide-flow":
+      canUseFlowBin: true
+      warnOnNotInstalled: false
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNoConfigFile: true
+    prettierOptions:
+      jsxBracketSameLine: true
+      semi: false
+      singleQuote: true
+    useEslint: true
   "release-notes":
     viewedVersion: "0.94.0"
+  "rubocop-auto-correct":
+    autoRun: true
+    correctFile: true
+    notification: false
+  "split-diff":
+    diffWords: true
+    ignoreWhitespace: true
+    leftEditorColor: "red"
+    rightEditorColor: "green"
+    scrollSyncType: "Vertical + Horizontal"
+  teletype: {}
   "tree-view": {}
   "vim-mode-plus":
     incrementalSearch: true
@@ -53,3 +125,6 @@
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
+".reason.source":
+  editor:
+    preferredLineLength: 110
