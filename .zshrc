@@ -14,8 +14,9 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # 一般ユーザ時
-tmp_prompt="%{${fg[cyan]}%}%n:%~%# %{${reset_color}%}"
-tmp_prompt2="%{${fg[cyan]}%}%_> %{${reset_color}%}"
+tmp_prompt="%{${fg[blue]}%}%* %{${fg[cyan]}%}%n@%m %{${fg[magenta]}%}%~
+%# %{${reset_color}%}"
+tmp_prompt2="%{${fg[magenta]}%}%_> %{${reset_color}%}"
 tmp_sprompt="%{${fg[yellow]}%}%r is correct? [Yes, No, Abort, Edit]:%{${reset_color}%}"
 
 # rootユーザ時(太字にし、アンダーバーをつける)
@@ -167,11 +168,9 @@ case ${OSTYPE} in
         #Mac用の設定
         export CLICOLOR=1
         export LSCOLORS=xbfxcxdxbxegedabagacad
-        alias ls='ls -G -F'
         ;;
     linux*)
         #Linux用の設定
-        alias ls='ls -F --color=auto'
         ;;
 esac
 
@@ -179,3 +178,9 @@ esac
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+source $HOME/.zsh_functions
